@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font-family: "Euclid Circular A";
+  color: #1d1d1d;
+  background: #071a20;
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  animation:tracking-in-contract 0.6s linear both} 
+  @keyframes tracking-in-contract
+      {0%
+        {letter-spacing:.6em;opacity:0}40%
+          {opacity:.6}100%
+            {letter-spacing:normal;opacity:1}
+}
+
+p {
+  font-size: 20px;
+}
+
+h2{
+  color:  rgb(255, 57, 57);
+}
+
+p, h2 {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin: 20px 15%;
+  animation:blur-in-expand 0.6s linear both} 
+  @keyframes blur-in-expand
+    {0%
+      {transform:scale(0);filter:blur(12px);opacity:0}100%
+        {transform:scale(1);filter:blur(0);opacity:1}
+}
+
+section { padding: 40px 0;}
+
+.image {
+  height: 400px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url(aguabg.jpg);
+}
+
+.text { position: relative;}
+
+.text::before {
+  content: "";
+  border-radius: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 110%;
+  background: #ffffff;
+}
+
+.text-title { position: relative;}
+
+.text-title::before {
+  content: "";
+  border-radius: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 90%;
+  height: 90%;
+  background: #141414;
+}
+
+
+.Aguays {
+position: relative;
+width: 500px;
+display: block;
+margin: auto;
+border-radius: 30px;
+animation:jello-vertical .9s linear both} 
+@keyframes jello-vertical
+  {0%
+    {transform:scale3d(1,1,1)}30%
+      {transform:scale3d(.75,1.25,1)}40%
+        {transform:scale3d(1.25,.75,1)}50%
+          {transform:scale3d(.85,1.15,1)}65%
+            {transform:scale3d(1.05,.95,1)}75%
+              {transform:scale3d(.95,1.05,1)}100%
+                {transform:scale3d(1,1,1)}
+}
+
+/*footer*/
+
+.footer {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 10px;
+   font-size: 20px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+ }
+ 
+.footer a:hover {
+    color: #da7bff;
+ }
+
+
+/*Notificacion*/
+
+.notification {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: max-content;
+  padding: 20px 15px;
+  border-radius: 4px;
+  background-color: #141619;
+  color: #f6f5f9;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  animation: fade-in 4s linear forwards;
+  z-index: 1;
+}
+
+.notification-progress {
+  position: fixed;
+  left: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-image: linear-gradient(
+    to right, #539bdb, #3250bf);
+  border-radius: inherit;
+  animation: load 3s 0.25s linear forwards;
+  z-index: 1;
+}
+
+@keyframes fade-in {
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes load {
+  to {
+    transform: scaleX(1);
+  }
+}
